@@ -226,7 +226,7 @@ public class IsiScanner {
                                         }
 					return token;
 				}
-				else {
+				else {                                     
                                         t.getError("Simbolo Nao Reconhecido na linha "+line);
 					throw new IsiLexicalException("Simbolo Nao Reconhecido");                                        
 				}
@@ -293,7 +293,7 @@ public class IsiScanner {
                         
                         case 3:
                             
-                            if (isSpace(currentChar) || isOperator(currentChar) || isEOF(currentChar) || isSimpleSpecialSymbol(currentChar)){
+                            if (isSpace(currentChar) || isOperator(currentChar) || isEOF(currentChar) || isSimpleSpecialSymbol(currentChar) || isChar(currentChar) || isDigit(currentChar)){
 //                                symbol+=currentChar;
                                 if (!isEOF(currentChar))
 						back();
@@ -347,7 +347,7 @@ public class IsiScanner {
                         ||"div".equals(s)||"or".equals(s)||"and".equals(s)||"and".equals(s)||"not".equals(s)||"if".equals(s)||"then".equals(s)||"else".equals(s)
                         ||"of".equals(s)||"while".equals(s)||"do".equals(s)||"begin".equals(s)||"end".equals(s)||"read".equals(s)||"write".equals(s)||"var".equals(s)
                         ||"array".equals(s)||"function".equals(s)||"procedure".equals(s)||"program".equals(s)||"true".equals(s)||"false".equals(s)
-                        ||"char".equals(s)||"integer".equals(s)||"boolean".equals(s);
+                        ||"char".equals(s)||"integer".equals(s)||"boolean".equals(s)||"writeln".equals(s)||"readln".equals(s);
                        
 	}
         
