@@ -11,13 +11,13 @@ import lexico.*;
  * @author Jaime Rungo
  */
 public class IsiParser {
-    private IsiScanner scanner; // analisador léxico
+    private Scanner scanner; // analisador léxico
 	private Token      token;   // o token atual
 	
 	/* o Parser recebe o analisador léxico como parâmetro no construtor
 	 * pois a cada procedimento invoca-o sob demanda
 	 */
-	public IsiParser(IsiScanner scanner) {
+	public IsiParser(Scanner scanner) {
 		this.scanner = scanner;
 	}
 	

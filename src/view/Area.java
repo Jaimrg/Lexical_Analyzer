@@ -16,7 +16,7 @@ import javax.swing.border.AbstractBorder;
 
 public class Area extends AbstractBorder {
 	private int lineHeight = 20;
-	private int characterHeight = 8;
+	private int characterHeight = 10;
 	private int characterWidth = 7;
 	private Color myColor;
 	private JViewport viewport;

@@ -16,7 +16,7 @@ import view.*;
  *
  * @author Jaime Rungo
  */
-public class IsiScanner {
+public class Scanner {
 	
 	private char[] content;
 	private int    estado;
@@ -24,7 +24,7 @@ public class IsiScanner {
 	private int    line;
 	private int    column;
 	
-	public IsiScanner(String filename) {
+	public Scanner(String filename) {
 		try {
 			line = 1;
 			column = 0;
@@ -39,142 +39,7 @@ public class IsiScanner {
 		catch(Exception ex) {
 			ex.printStackTrace();
 		}
-	}
-	
-	/*public Token nextToken() {
-		char currentChar;
-		Token token = null;
-		String term="";
-                String simbol="";
-		if (isEOF()) {
-			return null;
-		}
-		estado = 0;
-		while (true) {
-			currentChar = nextChar();
-			column++;
-			
-			switch(estado) {
-			case 0:
-				if (isChar(currentChar)) {
-					term += currentChar;
-					estado = 1; 
-				}
-				else if (isDigit(currentChar)) {
-					estado = 2;
-					term += currentChar;
-				}
-				else if (isSpace(currentChar)) {
-					estado = 0;
-				}
-                                else if(isSimpleSpecialSymbol(currentChar)){
-                                        estado =1;
-                                        simbol+=currentChar;
-                                }
-				else if (isOperator(currentChar)) {
-					term += currentChar;
-					token = new Token();
-					token.setType(Token.TK_OPERATOR);
-					token.setText(term);
-					token.setLine(line);
-					token.setColumn(column - term.length());
-                                        
-					return token;
-				}
-				else {
-					throw new IsiLexicalException("Unrecognized SYMBOL");
-				}
-				break;
-			case 1:
-				if (isChar(currentChar) || isDigit(currentChar)) {
-					estado = 1;
-					term += currentChar;
-				}
-                                if(isDigit(currentChar)){
-                                    estado=2;
-                                }
-				else if (isSpace(currentChar) || isOperator(currentChar) || isEOF(currentChar) || (currentChar==':')){
-					if (!isEOF(currentChar))
-						back();
-					token = new Token();
-					
-					token.setText(term);
-					token.setLine(line);
-					token.setColumn(column - term.length());
-                                        // se for simbolo especial
-                                        if(isSpecialSymbol(term)){
-                                            token.setType(Token.TK_SPECIAL_SYMBOL);
-                                        }
-                                        // se for somente um identificador
-                                        else if(!isSpecialSymbol(term)){
-                                            token.setType(Token.TK_IDENTIFIER);
-                                            if(currentChar==' '){
-                                                simbol+=currentChar;
-                                                estado =3;
-                                            }
-                                        }
-					return token;
-				}
-				else {
-                                        /*if(currentChar==':'){
-                                           // term+=currentChar;
-                                            System.out.println("variavel: "+term);
-                                            
-                                        }*/
-                                        /*else{
-                                            System.out.println("Na Linha "+line);
-                                            throw new IsiLexicalException("Malformed Identifier");
-                                            
-                                        }*/
-				//}
-			/*	break;
-			case 2:
-				if (isDigit(currentChar) || currentChar == '.') {
-					estado = 2;
-					term += currentChar;
-				}
-                               
-				else if (!isChar(currentChar) || isEOF(currentChar)) {
-					if (!isEOF(currentChar))
-						back();
-					token = new Token();
-					token.setType(Token.TK_NUMBER);
-					token.setText(term);
-					token.setLine(line);
-					token.setColumn(column - term.length());
-                                        
-                                        
-                                         if(isSimpleSpecialSymbol(currentChar)){
-                                             token.setType(Token.TK_SPECIAL_SYMBOL);
-                                         }
-					return token;
-				}
-				else {
-                                       
-					throw new IsiLexicalException("Unrecognized Number");
-                                        
-                                        
-					
-				}
-				break;
-                                
-                        case 3:{
-                            if(currentChar==':'){
-                                simbol+=currentChar;
-                                token.setText(simbol);
-                                token.setType(Token.TK_SPECIAL_SYMBOL);
-                                return token;
-                            }
-                            
-
-			}
-                        
-		}
-		
-                }	
-		
-	}*/
-
+	}		
         
         // vamos testar another metodo
         

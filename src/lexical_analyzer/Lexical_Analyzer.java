@@ -22,7 +22,7 @@ public class Lexical_Analyzer {
         Tela t = new Tela();
         t.setVisible(true);
 		try {
-			IsiScanner sc = new IsiScanner("input.isi");
+			Scanner sc = new Scanner("input.isi");
 			IsiParser  pa = new IsiParser(sc);
 			
 			//pa.E();
