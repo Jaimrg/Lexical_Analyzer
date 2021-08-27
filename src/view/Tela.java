@@ -69,6 +69,8 @@ public class Tela extends javax.swing.JFrame {
 			//pa.E();
 			
 		System.out.println("Compilation Successful!");
+                jTextArea2.setForeground(new Color(0, 153, 0));
+                jTextArea2.setText("Compilado com Sucesso");
                 
         
         do{
@@ -86,9 +88,11 @@ public class Tela extends javax.swing.JFrame {
 			System.out.println("Lexical Error "+ex.getMessage());
                         int linha;
                         if(token==null){
+                           jTextArea2.setForeground(new Color(254, 0, 0));
                            jTextArea2.setText("Erro Lexico: "+ex.getMessage()+" na linha "+1); 
                         }
                         else{
+                        jTextArea2.setForeground(new Color(254, 0, 0));
                         linha = token.getLine()+1;
                         jTextArea2.setText("Erro Lexico: "+ex.getMessage()+" na linha "+linha);
                         }
@@ -140,7 +144,6 @@ public class Tela extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Analisador_Lexico");
-        setAlwaysOnTop(true);
         setBackground(new java.awt.Color(255, 255, 255));
         setLocation(new java.awt.Point(10, 0));
         setResizable(false);
